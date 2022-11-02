@@ -20,10 +20,22 @@ body {
    height: 100vh;
    width: 100vw;
    padding-top: 4rem;
+   color: $primary-color;
 }
 
 .card-img-top {
    height: 200px;
    width: 200px;
    object-fit: cover;
+}
+
+.card-title {
+   font-family: $accenture-font, cursive;
+}
+
+.card-subtitle {
+   color: $secondary-color;
+   font-weight: 700;
+   font-size: .75rem;
+   letter-spacing: .05rem;
 }
