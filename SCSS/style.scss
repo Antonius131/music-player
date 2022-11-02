@@ -49,38 +49,50 @@ body {
       font-size: .75rem;
       letter-spacing: .03rem;
    }
-}
 
-/* navigation */
 
-#navigation {
-   font-size: 1.5rem;
+   /* progress bar */
 
-   .btn {
-      font-size: 1.15rem;
-
-      &:hover {
-         color: $secondary-color;
-      }
-
-      &:active {
-         border: 1px solid transparent;
-      }
+   #progress-bar {
+      width: 90%;
+      margin: 0 auto;
+      border-radius: 3px;
+      background-color: $secondary-color;
+      height: 3px;
    }
 
-   #play-pause {
-      height: 50px;
-      width: 50px;
-      background-color: $primary-color;
-      color: #fff;
-   
-         .fa-solid.fa-play {
-            margin-top: 4px;
-            margin-left: 3px;
-         }
+
+   /* navigation */
+
+   #navigation {
+      font-size: 1.5rem;
+
+      .btn {
+         font-size: 1.15rem;
 
          &:hover {
-            background-color: $secondary-color;
+            color: $secondary-color;
          }
+
+         &:active {
+            border: 1px solid transparent;
+         }
+      }
+
+      #play-pause {
+         height: 50px;
+         width: 50px;
+         background-color: $primary-color;
+         color: #fff;
+      
+            .fa-solid.fa-play {
+               margin-top: 4px;
+               margin-left: 3px;
+            }
+
+            &:hover {
+               background-color: $secondary-color;
+            }
+      }
    }
 }
