@@ -5,13 +5,15 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Player</title>
-   <link rel="stylesheet" href="CSS/style.css">
 
    <!-- Bootstrap CSS -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
    <!-- Google Fonts -->
    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+   <!-- Font-awesome CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- Main CSS -->
    <link rel="stylesheet" href="CSS/style.css">
@@ -20,8 +22,32 @@
    <div class="container">
       <div class="row">
          <div class="col-12 col-md-2 offset-md-5">
-            <div class="card" id="music-player">
-               <h5 class="card-title">Hello</h5>
+            <div class="card text-center py-3 px-1" id="music-player">
+
+               <!-- Album info -->
+               <img src="" class="card-img-top" alt="album-img">
+               <h5 class="card-title">Song Name</h5>
+               <h6 class="card-subtitle mb-2 text-muted">Artist Name</h6>
+
+               <!-- Progress bar -->
+               <div id="progress-bar"></div>
+
+               <!-- Audio file -->
+               <audio src="" id="audio-file"></audio>
+
+               <!-- Navigation -->
+               <div id="navigation">
+                  <button id="prev" class="btn nav-btn">
+                     <i class="fa-solid fa-backward-step"></i>
+                  </button>
+                  <button id="play-pause" class="btn nav-btn-lg">
+                     <i class="fa-solid fa-play"></i>
+                  </button>
+                  <button id="next" class="btn nav-btn">
+                     <i class="fa-solid fa-forward-step"></i>
+                  </button>
+               </div>
+
             </div>
          </div>
       </div>
