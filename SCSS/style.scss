@@ -25,30 +25,31 @@ body {
    color: $primary-color;
 }
 
-.card {
+#music-player {
+   width: 300px;
+   margin: 0 auto;
    border: none;
    box-shadow: 0 19px 38px rgba(251, 157, 157, 0.2), 0 15px 12px rgba(251, 157, 157, 0.2);
+
+   /* album info */
+
+   .card-img-top {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+   }
+
+   .card-title {
+      font-family: $accenture-font, cursive;
+   }
+
+   .card-subtitle {
+      color: $secondary-color;
+      font-weight: 700;
+      font-size: .75rem;
+      letter-spacing: .03rem;
+   }
 }
-
-/* album info */
-
-.card-img-top {
-   height: 200px;
-   width: 200px;
-   object-fit: cover;
-}
-
-.card-title {
-   font-family: $accenture-font, cursive;
-}
-
-.card-subtitle {
-   color: $secondary-color;
-   font-weight: 700;
-   font-size: .75rem;
-   letter-spacing: .03rem;
-}
-
 
 /* navigation */
 
@@ -58,9 +59,12 @@ body {
    .btn {
       font-size: 1.15rem;
 
-
       &:hover {
          color: $secondary-color;
+      }
+
+      &:active {
+         border: 1px solid transparent;
       }
    }
 
