@@ -1,0 +1,22 @@
+/*** Colors ***/
+
+$primary-color: #2E4756;
+$secondary-color: #9FA2B2;
+$accenture-color: #FFE8E8;
+
+
+/*** Fonts ***/
+
+$primary-font: 'Raleway', sans-serif;
+$accenture-font: 'Lobster', cursive;
+
+
+
+/* Rules */
+
+body {
+   font-family: $primary-font, $accenture-font, sans-serif;
+   background-color: $accenture-color;
+   height: 100vh;
+   width: 100vw;
+}
