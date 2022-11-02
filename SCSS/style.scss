@@ -2,7 +2,7 @@
 
 $primary-color: #2E4756;
 $secondary-color: #9FA2B2;
-$accenture-color: #FFE8E8;
+$accenture-color: #ffe8e8;
 
 
 /*** Fonts ***/
@@ -12,7 +12,9 @@ $accenture-font: 'Lobster', cursive;
 
 
 
-/* Rules */
+/****** 
+   RULES 
+******/
 
 body {
    font-family: $primary-font, $accenture-font, sans-serif;
@@ -22,6 +24,13 @@ body {
    padding-top: 4rem;
    color: $primary-color;
 }
+
+.card {
+   border: none;
+   box-shadow: 0 19px 38px rgba(251, 157, 157, 0.2), 0 15px 12px rgba(251, 157, 157, 0.2);
+}
+
+/* album info */
 
 .card-img-top {
    height: 200px;
@@ -37,5 +46,37 @@ body {
    color: $secondary-color;
    font-weight: 700;
    font-size: .75rem;
-   letter-spacing: .05rem;
+   letter-spacing: .03rem;
+}
+
+
+/* navigation */
+
+#navigation {
+   font-size: 1.5rem;
+
+   .btn {
+      font-size: 1.15rem;
+
+
+      &:hover {
+         color: $secondary-color;
+      }
+   }
+
+   #play-pause {
+      height: 50px;
+      width: 50px;
+      background-color: $primary-color;
+      color: #fff;
+   
+         .fa-solid.fa-play {
+            margin-top: 4px;
+            margin-left: 3px;
+         }
+
+         &:hover {
+            background-color: $secondary-color;
+         }
+   }
 }
