@@ -1,45 +1,33 @@
-// get tracks URLs from API
+// create tracks objects array
 
-const audioFile = document.getElementById('audio-file');
 const tracks = [
    {
-      track: 'audioTrack',
-      artist: 'artist1',
+      track: './tracks/at-the-cross.mp3',
+      artist: 'Kodak Black',
       img: 'imagePath'
    },
    {
-      track: 'audioTrack',
-      artist: 'artist1',
+      track: './tracks/brun-the-house-down.mp3',
+      artist: 'AJR',
       img: 'imagePath'
    },
    {
-      track: 'audioTrack',
-      artist: 'artist1',
+      track: './tracks/hop-out-shoot.mp3',
+      artist: 'Kodak Black',
       img: 'imagePath'
    },
    {
-      track: 'audioTrack',
-      artist: 'artist1',
+      track: './tracks/into-it.mp3',
+      artist: 'A Boogie Wit da Hoodie',
       img: 'imagePath'
    },
    {
-      track: 'audioTrack',
-      artist: 'artist1',
+      track: './tracks/play.mp3',
+      artist: 'Kodak Black',
       img: 'imagePath'
    },
 ];
 
-axios.get('https://api.napster.com/v2.1/tracks/top?apikey=NWYxMzI0ZmEtZTQ3OC00ZTU0LTllMmYtNjIyYTdmYzBlMjkw')
-.then(response => {
-   const tracksList = response.data.tracks;
+// put tracks URLs into src audio tag
 
-   console.log(tracksList);
-}).catch(error => {
-   console.log(error);
-});
-
-audioFile.innerHTML = tracks[0];
-
-
-// put tracks URLs in audio tag
 
