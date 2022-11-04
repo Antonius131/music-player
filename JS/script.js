@@ -7,11 +7,6 @@ const tracks = [
       img: 'imagePath'
    },
    {
-      title: 'brun-the-house-down',
-      artist: 'AJR',
-      img: 'imagePath'
-   },
-   {
       title: 'hop-out-shoot',
       artist: 'Kodak Black',
       img: 'imagePath'
@@ -35,7 +30,7 @@ const dirPath = "./tracks";
 let i = 0;
 let trackTitle = tracks[i].title;
 
-let trackPath = audioTag.setAttribute('src', `${dirPath}/${trackTitle}.mp3`);
+audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 
 
 
@@ -48,7 +43,7 @@ playBtn.addEventListener(
    'click',
    () => {
       if (audioTag.paused) {
-         audioTag.play()
+         audioTag.play();
 
          playIcon.classList.remove('fa-play');
          playIcon.classList.add('fa-pause');
@@ -77,7 +72,12 @@ nextBtn.addEventListener (
       }
 
       trackTitle = tracks[i].title;
-      trackPath = audioTag.setAttribute('src', `${dirPath}/${trackTitle}.mp3`);
+      audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+
+      if (playIcon.classList.contains('fa-pause')) {
+         playIcon.classList.remove('fa-pause');
+         playIcon.classList.add('fa-play');
+      }
    }
 );
 
@@ -90,6 +90,11 @@ prevBtn.addEventListener (
       }
 
       trackTitle = tracks[i].title;
-      trackPath = audioTag.setAttribute('src', `${dirPath}/${trackTitle}.mp3`);
+      audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+
+      if (playIcon.classList.contains('fa-pause')) {
+         playIcon.classList.remove('fa-pause');
+         playIcon.classList.add('fa-play');
+      }
    }
 )
