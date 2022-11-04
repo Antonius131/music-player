@@ -5,36 +5,37 @@ const tracks = [
       trackTitle: 'At the cross',
       title: 'at-the-cross',
       artist: 'Kodak Black',
-      img: 'imagePath'
+      imgPath: './images/kdk-atc.jpg'
    },
    {
       trackTitle: 'Hop out shoot',
       title: 'hop-out-shoot',
       artist: 'Kodak Black',
-      img: 'imagePath'
+      imgPath: './images/kdk-hos.jpg'
    },
    {
       trackTitle: 'Into it',
       title: 'into-it',
       artist: 'A Boogie Wit da Hoodie',
-      img: 'imagePath'
+      imgPath: './images/abwdh-ii.jpg'
    },
    {
       trackTitle: 'Play',
       title: 'play',
       artist: 'Kodak Black',
-      img: 'imagePath'
+      imgPath: './images/kdk-play.jpg'
    },
 ];
 
 // put tracks URLs into src audio tag
 
+const albumImage = document.getElementById('album-img');
 const audioTag = document.getElementById('audio-file');
 const dirPath = "./tracks";
+let trackTitle;
 let i = 0;
-let trackTitle = tracks[i].title;
 
-audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+setTrackPath();
 setTrackInfo();
 
 
@@ -141,4 +142,8 @@ function setTrackInfo() {
 function setTrackPath() {
    trackTitle = tracks[i].title;
    audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+}
+
+function setAlbumImage() {
+
 }
