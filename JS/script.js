@@ -1,5 +1,6 @@
 // create tracks objects array
 
+let i = 0;
 const tracks = [
    {
       title: 'at-the-cross',
@@ -27,13 +28,9 @@ const tracks = [
 
 const audioTag = document.getElementById('audio-file');
 const dirPath = "./tracks";
-let i = 0;
-let trackTitle = tracks[i].title;
-
-audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+setAudioPath();
 
 console.dir(audioTag);
-
 
 
 
@@ -70,9 +67,7 @@ nextBtn.addEventListener (
          i = 0;
       }
 
-      trackTitle = tracks[i].title;
-      audioTag.src = `${dirPath}/${trackTitle}.mp3`;
-
+      setAudioPath();
       setAutoplay();
       iconToPause();
    }
@@ -87,8 +82,7 @@ prevBtn.addEventListener (
             i = tracks.length - 1;
          }
 
-         trackTitle = tracks[i].title;
-         audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+         setAudioPath();
          iconToPause();
       }
 
@@ -127,4 +121,9 @@ function iconToPlay() {
       playIcon.classList.remove('fa-pause');
       playIcon.classList.add('fa-play');
    }
+}
+
+function setAudioPath() {
+   let trackTitle = tracks[i].title;
+   audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 }
