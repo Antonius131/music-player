@@ -35,6 +35,8 @@ audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 console.dir(audioTag);
 
 
+
+
 // play/pause track
 
 const playBtn = document.getElementById('play-pause');
@@ -45,14 +47,10 @@ playBtn.addEventListener(
    () => {
       if (audioTag.paused) {
          audioTag.play();
-
-         playIcon.classList.remove('fa-play');
-         playIcon.classList.add('fa-pause');
+         iconToPause();
       } else {
          audioTag.pause()
-
-         playIcon.classList.remove('fa-pause');
-         playIcon.classList.add('fa-play');
+         iconToPlay();
       };
    }
 )
@@ -75,29 +73,58 @@ nextBtn.addEventListener (
       trackTitle = tracks[i].title;
       audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 
-      const setAutoplay = audioTag.autoplay = true;
-
-      if (setAutoplay) {
-         playIcon.classList.remove('fa-play');
-         playIcon.classList.add('fa-pause');
-      }
+      setAutoplay();
+      iconToPause();
    }
 );
 
 prevBtn.addEventListener (
    'click',
    () => {
-      i--;
-      if (i < 0) {
-         i = tracks.length - 1;
+      if (audioTag.currentTime > 0 && audioTag.currentTime < 2 ) {
+         i--;
+         if (i < 0) {
+            i = tracks.length - 1;
+         }
+
+         trackTitle = tracks[i].title;
+         audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+         iconToPause();
       }
 
-      trackTitle = tracks[i].title;
-      audioTag.src = `${dirPath}/${trackTitle}.mp3`;
-
-      if (playIcon.classList.contains('fa-pause')) {
-         playIcon.classList.remove('fa-pause');
-         playIcon.classList.add('fa-play');
-      }
+      audioTag.currentTime = 0;
+      setAutoplay();
+      iconToPause();
    }
-)
+);
+
+
+
+
+
+
+// Useful funcionts
+
+function setAutoplay() {
+   audioTag.autoplay = true;
+}
+
+function iconToPause() {
+   const isPlay = playIcon.classList.contains('fa-play');
+   const isAutoplay = audioTag.autoplay = true;
+
+   if (isPlay || isAutoplay) {
+      playIcon.classList.remove('fa-play');
+      playIcon.classList.add('fa-pause');
+   }
+}
+
+function iconToPlay() {
+   const isPause = playIcon.classList.contains('fa-pause');
+   const isAutoplay = audioTag.autoplay = false;
+
+   if (isPause || !isAutoplay) {
+      playIcon.classList.remove('fa-pause');
+      playIcon.classList.add('fa-play');
+   }
+}
