@@ -93,6 +93,7 @@ prevBtn.addEventListener (
 
          setImagePath();
          setTrackPath();
+         setTrackInfo();
          iconToPause();
       }
 
