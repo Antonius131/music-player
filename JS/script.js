@@ -35,3 +35,29 @@ const dirPath = "./tracks";
 const firstTrack = tracks[0].title;
 
 const trackPath = audioTag.setAttribute('src', `${dirPath}/${firstTrack}.mp3`);
+
+
+
+// play/pause track
+
+const playBtn = document.getElementById('play-pause');
+const playIcon = document.querySelector('.fa-play');
+
+console.log(playIcon);
+
+playBtn.addEventListener(
+   'click',
+   () => {
+      if (audioTag.paused) {
+         audioTag.play()
+
+         playIcon.classList.remove('fa-play');
+         playIcon.classList.add('fa-pause');
+      } else {
+         audioTag.pause()
+
+         playIcon.classList.remove('fa-pause');
+         playIcon.classList.add('fa-play');
+      };
+   }
+)
