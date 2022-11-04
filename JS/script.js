@@ -2,16 +2,16 @@
 
 const tracks = [
    {
-      trackTitle: 'At the cross',
-      title: 'at-the-cross',
-      artist: 'Kodak Black',
-      imgPath: './images/kdk-atc.jpg'
-   },
-   {
       trackTitle: 'Hop out shoot',
       title: 'hop-out-shoot',
       artist: 'Kodak Black',
       imgPath: './images/kdk-hos.jpg'
+   },
+   {
+      trackTitle: 'At the cross',
+      title: 'at-the-cross',
+      artist: 'Kodak Black',
+      imgPath: './images/kdk-atc.jpg'
    },
    {
       trackTitle: 'Into it',
