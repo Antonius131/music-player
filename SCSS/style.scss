@@ -44,11 +44,9 @@ body {
       @keyframes scale-in {
          0% {
             transform: scale(.95);
-            opacity: .8;
          }
          100% {
             transform: scale(1);
-            opacity: 1;
          }
       }
    }
