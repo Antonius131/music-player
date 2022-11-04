@@ -39,6 +39,8 @@ setImagePath();
 setTrackPath();
 setTrackInfo();
 
+console.dir(audio);
+
 
 
 
@@ -159,5 +161,3 @@ function animateImg() {
       albumImage.classList.add('animated-img');
     },10);
 }
-
-console.log(albumImage.classList);
