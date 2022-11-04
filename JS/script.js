@@ -1,23 +1,26 @@
 // create tracks objects array
 
-let i = 0;
 const tracks = [
    {
+      trackTitle: 'At the cross',
       title: 'at-the-cross',
       artist: 'Kodak Black',
       img: 'imagePath'
    },
    {
+      trackTitle: 'Hop out shoot',
       title: 'hop-out-shoot',
       artist: 'Kodak Black',
       img: 'imagePath'
    },
    {
+      trackTitle: 'Into it',
       title: 'into-it',
       artist: 'A Boogie Wit da Hoodie',
       img: 'imagePath'
    },
    {
+      trackTitle: 'Play',
       title: 'play',
       artist: 'Kodak Black',
       img: 'imagePath'
@@ -28,9 +31,11 @@ const tracks = [
 
 const audioTag = document.getElementById('audio-file');
 const dirPath = "./tracks";
-setAudioPath();
+let i = 0;
+let trackTitle = tracks[i].title;
 
-console.dir(audioTag);
+audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+setTrackInfo();
 
 
 
@@ -67,7 +72,10 @@ nextBtn.addEventListener (
          i = 0;
       }
 
-      setAudioPath();
+      trackTitle = tracks[i].title;
+      audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+
+      setTrackInfo();
       setAutoplay();
       iconToPause();
    }
@@ -82,11 +90,13 @@ prevBtn.addEventListener (
             i = tracks.length - 1;
          }
 
-         setAudioPath();
+         trackTitle = tracks[i].title;
+         audioTag.src = `${dirPath}/${trackTitle}.mp3`;
          iconToPause();
       }
 
       audioTag.currentTime = 0;
+      setTrackInfo();
       setAutoplay();
       iconToPause();
    }
@@ -123,7 +133,10 @@ function iconToPlay() {
    }
 }
 
-function setAudioPath() {
-   let trackTitle = tracks[i].title;
-   audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+function setTrackInfo() {
+   const trackTitle = document.querySelector('.track-title');
+   const artistName = document.querySelector('.artist');
+
+   trackTitle.innerHTML = tracks[i].trackTitle;
+   artistName.innerHTML = tracks[i].artist;
 }
