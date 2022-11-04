@@ -32,6 +32,7 @@ let trackTitle = tracks[i].title;
 
 audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 
+console.dir(audioTag);
 
 
 // play/pause track
@@ -74,9 +75,11 @@ nextBtn.addEventListener (
       trackTitle = tracks[i].title;
       audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 
-      if (playIcon.classList.contains('fa-pause')) {
-         playIcon.classList.remove('fa-pause');
-         playIcon.classList.add('fa-play');
+      const setAutoplay = audioTag.autoplay = true;
+
+      if (setAutoplay) {
+         playIcon.classList.remove('fa-play');
+         playIcon.classList.add('fa-pause');
       }
    }
 );
