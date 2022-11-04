@@ -27,7 +27,7 @@ const tracks = [
    },
 ];
 
-// put tracks URLs into src audio tag
+// seet track media paths on page load
 
 const albumImage = document.getElementById('album-img');
 const audioTag = document.getElementById('audio-file');
@@ -35,8 +35,10 @@ const dirPath = "./tracks";
 let trackTitle;
 let i = 0;
 
+setImagePath();
 setTrackPath();
 setTrackInfo();
+
 
 
 
@@ -59,7 +61,6 @@ playBtn.addEventListener(
 )
 
 
-
 // skip track
 
 const nextBtn = document.getElementById('next-btn');
@@ -73,6 +74,7 @@ nextBtn.addEventListener (
          i = 0;
       }
 
+      setImagePath();
       setTrackPath();
       setTrackInfo();
       setAutoplay();
@@ -89,12 +91,12 @@ prevBtn.addEventListener (
             i = tracks.length - 1;
          }
 
+         setImagePath();
          setTrackPath();
          iconToPause();
       }
 
       audioTag.currentTime = 0;
-      setTrackInfo();
       setAutoplay();
       iconToPause();
    }
@@ -144,6 +146,6 @@ function setTrackPath() {
    audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 }
 
-function setAlbumImage() {
-
+function setImagePath() {
+   albumImage.setAttribute('src', tracks[i].imgPath);
 }
