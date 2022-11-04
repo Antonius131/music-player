@@ -30,7 +30,7 @@ const tracks = [
 // seet track media paths on page load
 
 const albumImage = document.getElementById('album-img');
-const audioTag = document.getElementById('audio-file');
+const audio = document.getElementById('audio-file');
 const dirPath = "./tracks";
 let trackTitle;
 let i = 0;
@@ -50,11 +50,11 @@ const playIcon = document.querySelector('.fa-play');
 playBtn.addEventListener(
    'click',
    () => {
-      if (audioTag.paused) {
-         audioTag.play();
+      if (audio.paused) {
+         audio.play();
          iconToPause();
       } else {
-         audioTag.pause()
+         audio.pause()
          iconToPlay();
       };
    }
@@ -85,7 +85,7 @@ nextBtn.addEventListener (
 prevBtn.addEventListener (
    'click',
    () => {
-      if (audioTag.currentTime > 0 && audioTag.currentTime < 2 ) {
+      if (audio.currentTime > 0 && audio.currentTime < 2 ) {
          i--;
          if (i < 0) {
             i = tracks.length - 1;
@@ -96,7 +96,7 @@ prevBtn.addEventListener (
          iconToPause();
       }
 
-      audioTag.currentTime = 0;
+      audio.currentTime = 0;
       setAutoplay();
       iconToPause();
    }
@@ -110,12 +110,12 @@ prevBtn.addEventListener (
 // Useful funcionts
 
 function setAutoplay() {
-   audioTag.autoplay = true;
+   audio.autoplay = true;
 }
 
 function iconToPause() {
    const isPlay = playIcon.classList.contains('fa-play');
-   const isAutoplay = audioTag.autoplay = true;
+   const isAutoplay = audio.autoplay = true;
 
    if (isPlay || isAutoplay) {
       playIcon.classList.remove('fa-play');
@@ -125,7 +125,7 @@ function iconToPause() {
 
 function iconToPlay() {
    const isPause = playIcon.classList.contains('fa-pause');
-   const isAutoplay = audioTag.autoplay = false;
+   const isAutoplay = audio.autoplay = false;
 
    if (isPause || !isAutoplay) {
       playIcon.classList.remove('fa-pause');
@@ -143,7 +143,7 @@ function setTrackInfo() {
 
 function setTrackPath() {
    trackTitle = tracks[i].title;
-   audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+   audio.src = `${dirPath}/${trackTitle}.mp3`;
 }
 
 function setImagePath() {
