@@ -11,7 +11,7 @@ const tracks = [
       trackTitle: 'At the cross',
       title: 'at-the-cross',
       artist: 'Kodak Black',
-      imgPath: './images/kdk-atc.jpg'
+      imgPath: './images/kdk-atc.jpeg'
    },
    {
       trackTitle: 'Into it',
@@ -76,6 +76,7 @@ nextBtn.addEventListener (
 
       setImagePath();
       setTrackPath();
+      animateImg();
       setTrackInfo();
       setAutoplay();
       iconToPause();
@@ -93,6 +94,7 @@ prevBtn.addEventListener (
 
          setImagePath();
          setTrackPath();
+         animateImg();
          setTrackInfo();
          iconToPause();
       }
@@ -150,3 +152,12 @@ function setTrackPath() {
 function setImagePath() {
    albumImage.setAttribute('src', tracks[i].imgPath);
 }
+
+function animateImg() {
+   albumImage.classList.remove('animated-img');
+   setTimeout(function(){
+      albumImage.classList.add('animated-img');
+    },10);
+}
+
+console.log(albumImage.classList);
