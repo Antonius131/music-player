@@ -32,9 +32,10 @@ const tracks = [
 
 const audioTag = document.getElementById('audio-file');
 const dirPath = "./tracks";
-const firstTrack = tracks[0].title;
+let i = 0;
+let trackTitle = tracks[i].title;
 
-const trackPath = audioTag.setAttribute('src', `${dirPath}/${firstTrack}.mp3`);
+let trackPath = audioTag.setAttribute('src', `${dirPath}/${trackTitle}.mp3`);
 
 
 
@@ -42,8 +43,6 @@ const trackPath = audioTag.setAttribute('src', `${dirPath}/${firstTrack}.mp3`);
 
 const playBtn = document.getElementById('play-pause');
 const playIcon = document.querySelector('.fa-play');
-
-console.log(playIcon);
 
 playBtn.addEventListener(
    'click',
@@ -59,5 +58,38 @@ playBtn.addEventListener(
          playIcon.classList.remove('fa-pause');
          playIcon.classList.add('fa-play');
       };
+   }
+)
+
+
+
+// skip track
+
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+
+nextBtn.addEventListener (
+   'click',
+   () => {
+      i++;
+      if (i > tracks.length-1) {
+         i = 0;
+      }
+
+      trackTitle = tracks[i].title;
+      trackPath = audioTag.setAttribute('src', `${dirPath}/${trackTitle}.mp3`);
+   }
+);
+
+prevBtn.addEventListener (
+   'click',
+   () => {
+      i--;
+      if (i < 0) {
+         i = tracks.length - 1;
+      }
+
+      trackTitle = tracks[i].title;
+      trackPath = audioTag.setAttribute('src', `${dirPath}/${trackTitle}.mp3`);
    }
 )
