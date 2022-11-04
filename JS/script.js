@@ -72,9 +72,7 @@ nextBtn.addEventListener (
          i = 0;
       }
 
-      trackTitle = tracks[i].title;
-      audioTag.src = `${dirPath}/${trackTitle}.mp3`;
-
+      setTrackPath();
       setTrackInfo();
       setAutoplay();
       iconToPause();
@@ -90,8 +88,7 @@ prevBtn.addEventListener (
             i = tracks.length - 1;
          }
 
-         trackTitle = tracks[i].title;
-         audioTag.src = `${dirPath}/${trackTitle}.mp3`;
+         setTrackPath();
          iconToPause();
       }
 
@@ -139,4 +136,9 @@ function setTrackInfo() {
 
    trackTitle.innerHTML = tracks[i].trackTitle;
    artistName.innerHTML = tracks[i].artist;
+}
+
+function setTrackPath() {
+   trackTitle = tracks[i].title;
+   audioTag.src = `${dirPath}/${trackTitle}.mp3`;
 }
