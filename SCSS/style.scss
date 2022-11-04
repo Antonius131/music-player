@@ -33,10 +33,24 @@ body {
 
    /* album info */
 
-   .card-img-top {
+   #album-img {
       height: 200px;
       width: 200px;
       object-fit: cover;
+   }
+
+   .animated-img {
+      animation: scale-in .2s ease-in-out;
+      @keyframes scale-in {
+         0% {
+            transform: scale(.95);
+            opacity: .8;
+         }
+         100% {
+            transform: scale(1);
+            opacity: 1;
+         }
+      }
    }
 
    .card-title {
@@ -69,6 +83,7 @@ body {
 
       .btn {
          font-size: 1.15rem;
+         transition: all .2s ease-in-out;
 
          &:hover {
             color: $secondary-color;
@@ -76,6 +91,7 @@ body {
 
          &:active {
             border: 1px solid transparent;
+            transform: scale(.7);
          }
       }
 
