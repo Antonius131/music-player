@@ -71,10 +71,7 @@ const prevBtn = document.getElementById('prev-btn');
 nextBtn.addEventListener (
    'click',
    () => {
-      i++;
-      if (i > tracks.length-1) {
-         i = 0;
-      }
+      toNextTrack();
 
       setImagePath();
       setTrackPath();
@@ -89,10 +86,7 @@ prevBtn.addEventListener (
    'click',
    () => {
       if (audio.currentTime > 0 && audio.currentTime < 2 ) {
-         i--;
-         if (i < 0) {
-            i = tracks.length - 1;
-         }
+         toPrevTack();
 
          setImagePath();
          setTrackPath();
@@ -160,4 +154,18 @@ function animateImg() {
    setTimeout(function(){
       albumImage.classList.add('animated-img');
     },10);
+}
+
+function toNextTrack() {
+   i++;
+   if (i > tracks.length-1) {
+      i = 0;
+   }
+}
+
+function toPrevTack() {
+   i--;
+   if (i < 0) {
+      i = tracks.length - 1;
+   }
 }
