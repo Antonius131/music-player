@@ -32,6 +32,15 @@ const tracks = [
 const albumImage = document.getElementById('album-img');
 const audio = document.getElementById('audio-file');
 const dirPath = "./tracks";
+
+audio.addEventListener(
+   'loadeddata',
+   () => {
+      const timeEnd = document.querySelector('.time-end');
+      timeEnd.innerHTML = '0:' + Math.floor(audio.duration);
+   }
+)
+
 let trackTitle;
 let i = 0;
 
