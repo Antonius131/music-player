@@ -9,6 +9,7 @@ $accenture-color: #ffe8e8;
 
 $primary-font: 'Raleway', sans-serif;
 $accenture-font: 'Lobster', cursive;
+$timer-font: 'Inconsola', monospace;
 
 
 
@@ -58,8 +59,15 @@ body {
    .card-subtitle {
       color: $secondary-color;
       font-weight: 700;
-      font-size: .75rem;
+      font-size: .8rem;
       letter-spacing: .03rem;
+   }
+
+   .current-time,
+   .time-end {
+      font-family: $timer-font;
+      color: $primary-color;
+      font-size: .75rem;
    }
 
 
