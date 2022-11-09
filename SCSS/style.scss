@@ -1,7 +1,7 @@
 /*** Colors ***/
 
 $primary-color: #2E4756;
-$secondary-color: #9FA2B2;
+$secondary-color: #c5c8d8;
 $accenture-color: #ffe8e8;
 
 
@@ -66,11 +66,16 @@ body {
    /* progress bar */
 
    #progress-bar {
-      width: 90%;
-      margin: 0 auto;
-      border-radius: 3px;
-      background-color: $secondary-color;
+      width: 100%;
       height: 3px;
+      background-color: $secondary-color;
+
+      .buffer {
+         height: 100%;
+         width: 1%;
+         background-color: $primary-color;
+         transition: .3s;
+      }
    }
 
 
