@@ -68,6 +68,7 @@ playBtn.addEventListener(
 
          setInterval(() => {
             buffer.style.width = audio.currentTime / audio.duration * 100 + '%';
+            
          }, 001);
       } else {
          audio.pause()
@@ -110,7 +111,7 @@ prevBtn.addEventListener (
       }
 
       audio.currentTime = 0;
-      setAutoplay();
+      audio.play();
       iconToPause();
    }
 );
