@@ -47,8 +47,6 @@ setImagePath();
 setTrackPath();
 setTrackInfo();
 
-// console.dir(audio);
-
 
 
 
@@ -68,14 +66,15 @@ playBtn.addEventListener(
 
          setInterval(() => {
             buffer.style.width = audio.currentTime / audio.duration * 100 + '%';
-            
-         }, 001);
+            currentTime.textContent = getTimer(audio.currentTime);
+         }, 0);
       } else {
-         audio.pause()
+         audio.pause();
          iconToPlay();
       };
    }
 )
+
 
 
 // skip track
@@ -183,4 +182,12 @@ function toPrevTack() {
    if (i < 0) {
       i = tracks.length - 1;
    }
+}
+
+function getTimer(num) {
+   let seconds = parseInt(num);
+   let minutes = parseInt(seconds / 60);
+   seconds -= minutes * 60;
+
+   return `${minutes}:${String(seconds % 60).padStart(2,0)}`;
 }
