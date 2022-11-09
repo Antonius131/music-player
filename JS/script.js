@@ -32,6 +32,8 @@ const tracks = [
 const albumImage = document.getElementById('album-img');
 const audio = document.getElementById('audio-file');
 const dirPath = "./tracks";
+let trackTitle;
+let i = 0;
 
 audio.addEventListener(
    'loadeddata',
@@ -39,16 +41,13 @@ audio.addEventListener(
       const timeEnd = document.querySelector('.time-end');
       timeEnd.innerHTML = '0:' + Math.floor(audio.duration);
    }
-)
-
-let trackTitle;
-let i = 0;
+);
 
 setImagePath();
 setTrackPath();
 setTrackInfo();
 
-console.dir(audio);
+// console.dir(audio);
 
 
 
@@ -57,6 +56,8 @@ console.dir(audio);
 
 const playBtn = document.getElementById('play-pause');
 const playIcon = document.querySelector('.fa-play');
+let buffer = document.querySelector('.buffer');
+let currentTime = document.querySelector('.current-time');
 
 playBtn.addEventListener(
    'click',
@@ -64,6 +65,10 @@ playBtn.addEventListener(
       if (audio.paused) {
          audio.play();
          iconToPause();
+
+         setInterval(() => {
+            buffer.style.width = audio.currentTime / audio.duration * 100 + '%';
+         }, 001);
       } else {
          audio.pause()
          iconToPlay();
