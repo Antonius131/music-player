@@ -117,6 +117,20 @@ prevBtn.addEventListener (
 
 
 
+// seek progress bar
+
+const progressBar = document.getElementById('progress-bar');
+progressBar.addEventListener(
+   'click',
+   ev => {
+      let barWidth = window.getComputedStyle(progressBar).width;
+      const seekTime = ev.offsetX / parseInt(barWidth) * audio.duration;
+
+      audio.currentTime = seekTime;
+   }
+)
+
+
 
 
 
